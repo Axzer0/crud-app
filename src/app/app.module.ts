@@ -25,6 +25,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {ReactiveFormsModule} from '@angular/forms';
 import {SearchService} from './service/search.service';
 import {ForTableService} from './service/for-table.service';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import {ForTableService} from './service/for-table.service';
     AppRoutingModule,
     RouterModule,
     MatDialogModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSelectModule
   ],
   providers: [LoginService,SearchService,ForTableService],
   entryComponents:[DialogComponent],

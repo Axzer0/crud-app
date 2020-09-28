@@ -1,5 +1,18 @@
 <app-navbar></app-navbar>
-<div class="add">
+
+<mat-form-field class="form">
+  <mat-label>Select which to add</mat-label>
+  <mat-select >
+    <mat-option value="None" (click)="showForm('none')">None</mat-option>
+    <mat-option value="Login" (click)="showForm('login')">Login</mat-option>
+    <mat-option value="Data" (click)="showForm('data')">Data</mat-option>
+  </mat-select>
+  <mat-hint>Select which form to edit. <p>[add more user in login or data in table]</p></mat-hint>
+</mat-form-field>
+
+
+
+<div class="add" id="f1">
 <form novalidate [formGroup]="add_form" #aForm="ngForm">
 
   <mat-form-field appearance="outline">
@@ -20,4 +33,26 @@
   <button mat-button (click)="onClose()">Clear</button>
 
 </form>
+</div>
+
+<div class="add" id="f2">
+  <form novalidate [formGroup]="login_form" #lForm='ngForm'>
+    <mat-form-field appearance="outline">
+      <mat-label>User</mat-label>
+      <input type="text" matInput formControlName="user" required>
+      <mat-error *ngIf="login_form.get('user').hasError('required') && login_form.get('user').touched">empty</mat-error>
+
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="outline">
+      <mat-label>Password</mat-label>
+      <input type="password" matInput formControlName="password" required>
+      <mat-error *ngIf="login_form.get('password').hasError('required') && login_form.get('password').touched">empty</mat-error>
+
+    </mat-form-field>
+    <br>
+    <button mat-button type="submit" [disabled]="login_form.invalid" (click)="onSubmit1()">Submit</button>
+    <button mat-button (click)="onClose1()">Clear</button>
+
+  </form>
 </div>
