@@ -1,0 +1,13 @@
+<div class="dialog">
+  <p>Row Info</p>
+  <hr>
+  <p>ID: {{data.row.id}}</p>
+  <p>Name: {{data.row.name}}</p>
+  <p>E-Mail: {{data.row.email}}</p>
+
+  <p>
+    <button mat-button mat-dialog-close="false">Edit</button>
+    <button mat-button (click)="close()">Close</button>
+    <button mat-button mat-dialog-close="true">Delete</button>
+  </p>
+</div>

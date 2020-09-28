@@ -1,0 +1,40 @@
+<app-navbar></app-navbar>
+
+<mat-grid-list cols="2" rowHeight="500px">
+
+  <mat-grid-tile>
+    <div class="contain">
+      <table mat-table [dataSource]="dataSource" class="tab">
+
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef>Id</th>
+          <td mat-cell *matCellDef="let value">{{value.id}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef>Name</th>
+          <td mat-cell *matCellDef="let value">{{value.name}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="email">
+          <th mat-header-cell *matHeaderCellDef>E-mail</th>
+          <td mat-cell *matCellDef="let value">{{value.email}}</td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="cols"></tr>
+        <tr mat-row *matRowDef="let row;columns: cols;"
+            (click)="click(row)"></tr>
+
+      </table>
+    </div>
+  </mat-grid-tile>
+
+  <mat-grid-tile>
+    <div *ngIf="rowId" style="width: 75%">
+      <app-edit [data]="rowData" (onChange)="edit($event)"></app-edit>
+    </div>
+  </mat-grid-tile>
+
+</mat-grid-list>
+
+

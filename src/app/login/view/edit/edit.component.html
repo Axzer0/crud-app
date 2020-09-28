@@ -1,0 +1,25 @@
+<div class="add">
+  <form novalidate [formGroup]="edit_form" #eForm="ngForm" >
+
+
+    <mat-form-field appearance="outline">
+      <mat-label>Name</mat-label>
+      <input matInput type="text" formControlName="name" required>
+      <mat-error *ngIf="edit_form.get('name').hasError('required') && edit_form.get('name').touched">empty</mat-error>
+    </mat-form-field>
+    <br>
+
+    <mat-form-field appearance="outline">
+      <mat-label>E-Mail</mat-label>
+      <input matInput type="email" formControlName="email" required>
+      <mat-error *ngIf="edit_form.get('email').hasError('required') && edit_form.get('email').touched">empty</mat-error>
+    </mat-form-field>
+    <br>
+
+    <button mat-button type="submit" [disabled]="edit_form.invalid" (click)="onSubmit()">submit</button>
+    <button mat-button (click)="clear()">Clear</button>
+
+
+
+  </form>
+</div>

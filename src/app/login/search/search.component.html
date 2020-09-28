@@ -1,0 +1,25 @@
+<app-navbar></app-navbar>
+<mat-grid-list cols="2" rowHeight="150px">
+  <mat-grid-tile>
+    <div class="search">
+      <mat-form-field appearance="outline">
+        <mat-label>Search</mat-label>
+        <input type="text" matInput [(ngModel)]="find">
+      </mat-form-field>
+      <button mat-raised-button style="margin-left: 15px" (click)="toFind(find)"> Search </button>
+    </div>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <p class="data">Searched Value--  {{find}} : {{checker}}</p>
+  </mat-grid-tile>
+</mat-grid-list>
+<hr>
+<div *ngFor="let s of searchedInfo" class="display">
+  <p>Searched Data</p>
+  <hr>
+  <p>ID: {{s.id}}</p>
+  <p>Name: {{s.name}}</p>
+  <p>E-Mail: {{s.email}}</p>
+</div>
+
+

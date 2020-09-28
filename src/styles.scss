@@ -1,1 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.space{
+  flex: 1 1 auto;
+}
+
+.go{
+  background: none;
+  color: black;
+  border: none;
+  padding: 2px;
+  margin: 2px;
+  height: 23px;
+  outline: none;
+
+}
+
+.go:hover{
+  background: grey;
+  opacity: 0.6;
+  box-shadow: 5px 10px 10px inset whitesmoke;
+  border-radius: 5%;
+}
+
+.search{
+  font-family: "Felix Titling", monospace;
+  outline: none;
+}
+

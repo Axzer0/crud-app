@@ -1,0 +1,11 @@
+<mat-toolbar>
+  <a mat-button routerLink="/add">Add</a>
+  <a mat-button routerLink="/view">View</a>
+  <a mat-button routerLink="/login">Login</a>
+  <span class="space"></span>
+  <mat-form-field>
+  <input type="text" matInput [(ngModel)]="search">
+  </mat-form-field>
+  <a mat-button routerLink="/search" (click)="click()">Search</a>
+</mat-toolbar>
+
